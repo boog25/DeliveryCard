@@ -23,8 +23,8 @@ public class TestDelivery {
 
     @Test
     void shouldNewDelivery() {
-        open("http://localhost:9999/");
         Configuration.headless=true;
+        open("http://localhost:9999/");
         $("[placeholder='Город']").setValue("Уфа").click();
         $(("[placeholder='Дата встречи']")).sendKeys("\b\b\b\b\b\b\b\b");
         $("[placeholder='Дата встречи']").sendKeys(format.format(newDays));
