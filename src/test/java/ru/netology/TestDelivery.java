@@ -1,6 +1,7 @@
 package ru.netology;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
@@ -23,6 +24,7 @@ public class TestDelivery {
     @Test
     void shouldNewDelivery() {
         open("http://localhost:9999/");
+        Configuration.headless=true;
         $("[placeholder='Город']").setValue("Уфа").click();
         $(("[placeholder='Дата встречи']")).sendKeys("\b\b\b\b\b\b\b\b");
         $("[placeholder='Дата встречи']").sendKeys(format.format(newDays));
